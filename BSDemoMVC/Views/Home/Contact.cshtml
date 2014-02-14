@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Contact Us";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    Bharat Engineering Works<br />
+    Near Ashapuri Mandir, Anil Starch Road, Bapunagar<br />
+    Ahmedabad - 380 024, Gujarat, India<br/>
+    <strong>Call Us:</strong><br />
+    <span class="glyphicon glyphicon-phone" >&nbsp; +91 - 9953361959</span>
+    <br />
+    <strong>Mobile:</strong><br/>    
+    <span class="glyphicon glyphicon-phone">&nbsp; +91 - 9427524528</span><br/>
+    <span class="glyphicon glyphicon-phone">&nbsp; +91 - 9426349655</span><br />
+    <strong>Office:</strong><br />
+    <span class="glyphicon glyphicon-phone">&nbsp; +91 - 079-22741730</span>
+</address>
+
+<address>
+    <strong>Email:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />    
+</address>
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div id="map_canvas" style="width:100%;height:300px;"></div>
+    </div>
+    <div class="col-md-1"></div>   
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        initialize();
+    });
+    function initialize() {
+        var mapOptions = {
+            center: new google.maps.LatLng(23.0378748, 72.6195163),
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+          mapOptions);
+        // create a marker
+        var latlng = new google.maps.LatLng(23.0378748, 72.6195163);
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: 'Bharat Engineering Works'
+        });
+    }
+</script> 
