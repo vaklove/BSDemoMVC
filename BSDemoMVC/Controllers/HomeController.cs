@@ -26,5 +26,23 @@ namespace BSDemoMVC.Controllers
 
             return View();
         }
+
+        public ActionResult Quality()
+        {
+            return View();
+        }
+        public ActionResult Client()
+        {
+            return View();
+        }
+        public ActionResult Infrastructure()
+        {
+            return View();
+        }
+
+        public ActionResult Research()
+        {
+            return View();
+        }
     }
 }
