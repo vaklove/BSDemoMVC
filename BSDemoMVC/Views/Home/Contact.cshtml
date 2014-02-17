@@ -1,33 +1,77 @@
-﻿@{
+﻿@model BSDemoMVC.Models.Contactus
+@{
     ViewBag.Title = "Contact Us";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    Bharat Engineering Works<br />
-    Near Ashapuri Mandir, Anil Starch Road, Bapunagar<br />
-    Ahmedabad - 380 024, Gujarat, India<br/>
-    <strong>Call Us:</strong><br />
-    <span class="glyphicon glyphicon-phone" >&nbsp; +91 - 9953361959</span>
-    <br />
-    <strong>Mobile:</strong><br/>    
-    <span class="glyphicon glyphicon-phone">&nbsp; +91 - 9427524528</span><br/>
-    <span class="glyphicon glyphicon-phone">&nbsp; +91 - 9426349655</span><br />
-    <strong>Office:</strong><br />
-    <span class="glyphicon glyphicon-phone">&nbsp; +91 - 079-22741730</span>
-</address>
+<div class="row">
+    <div class="col-md-6">
+        <h3 style="border-bottom: 1px solid #f6f6f6"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;Contact info</h3>
+        <address>
+            <strong> Bharat Engineering Works</strong><br />
+            <span class="fa fa-map-marker"></span>&nbsp;Near Ashapuri Mandir, Anil Starch Road, Bapunagar<br />
+            &nbsp;&nbsp;Ahmedabad - 380 024, Gujarat, India<br /><br />
+            <strong>Call Us:</strong><br />
+            <span class="glyphicon glyphicon-phone"></span>&nbsp; +91 - 9953361959
+            <br />
+            <strong>Mobile:</strong><br />
+            <span class="glyphicon glyphicon-phone"></span>&nbsp; +91 - 9427524528<br />
+            <span class="glyphicon glyphicon-phone"></span>&nbsp; +91 - 9426349655<br />
+            <strong>Office:</strong><br />
+            <span class="fa fa-phone" ></span>&nbsp; +91 - 079-22741730
+        </address>
+        <br />
+        <address>
+            <strong>Email:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        </address>
 
-<address>
-    <strong>Email:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />    
-</address>
+    </div>
+    <div class="col-md-6">
+        <h3 style="border-bottom: 1px solid #f6f6f6"><i class="fa fa-envelope"></i>&nbsp; Get in touch </h3>
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name)<br />
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })<br />
+                        @Html.ValidationMessageFor(model => model.Name,"" ,new { @class="alert "})
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email)<br />                        
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })<br />                        
+                        @Html.ValidationMessageFor(model => model.Email,"" ,new { @class="alert"})
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Phone)<br />
+                        @Html.TextBoxFor(model => model.Phone,new { @class = "form-control" })<br />
+                        @Html.ValidationMessageFor(model => model.Phone )
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Message)<br />
+                        @Html.TextAreaFor(model => model.Message, 5, 50, new { @class = "form-control" })<br />
+                        @Html.ValidationMessageFor(model => model.Message)
+                    </div>
+                    <br />
+                    <p>
+                        <input type="submit" value="Send" class="btn btn-primary" />
+                    </p>
+
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
 
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
+        <h3 style="border-bottom: 1px solid #f6f6f6"><i class="fa fa-map-marker"></i>&nbsp; our location</h3>
         <div id="map_canvas" style="width:100%;height:300px;"></div>
     </div>
-    <div class="col-md-1"></div>   
+    <div class="col-md-1"></div>
 </div>
 @Scripts.Render("~/bundles/jquery")
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
@@ -51,4 +95,4 @@
             title: 'Bharat Engineering Works'
         });
     }
-</script> 
+</script>
