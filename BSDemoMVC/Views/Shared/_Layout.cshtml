@@ -9,6 +9,11 @@
     @Scripts.Render("~/bundles/modernizr")
 
     <meta name="description" content="The description of my page" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -26,7 +31,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>
-                        @Html.ActionLink("Product", "Product", "Product")
+                        @Html.ActionLink("Products", "Products", "Products")
                         @*<ul>
                             <li>@Html.ActionLink("Industrial Washers", "Industrial Washers", "Product")</li>
                             <li>@Html.ActionLink("Mild Steel Products", "Mild Steel Products", "Product")</li>
@@ -47,11 +52,23 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var url = window.location.pathname;
+            var substr = url.split('/');
+            var urlaspx = substr[substr.length - 1];
+            if (urlaspx.length > 0) {
+                $('.nav').find('.active').removeClass('active');
+                $('.nav li a').each(function () {
+                    if (this.href.indexOf(urlaspx) >= 0) {
+                        $(this).parent().addClass('active');
+                    }
+                });
+            }
+        });
+    </script>
+    
 </body>
 </html>
 

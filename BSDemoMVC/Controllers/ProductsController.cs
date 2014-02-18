@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace BSDemoMVC.Controllers
 {
-    public class ProductController : Controller
+    public class ProductsController : Controller
     {
         //
         // GET: /Product/
@@ -14,7 +14,7 @@ namespace BSDemoMVC.Controllers
         {
             return View();
         }
-        public ActionResult Product()
+        public ActionResult Products()
         {
             return View();
         }

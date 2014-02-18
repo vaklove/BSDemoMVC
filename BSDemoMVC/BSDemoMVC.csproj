@@ -160,7 +160,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,6 +171,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-ie7.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -183,6 +184,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\flat-washers-250x250 %281%29.jpg" />
+    <Content Include="Images\flat-washers-250x250.jpg" />
+    <Content Include="Images\icon_top.png" />
+    <Content Include="Images\m-s-circle-250x250.jpg" />
+    <Content Include="Images\m-s-sheet-components-250x250.jpg" />
+    <Content Include="Images\m-s-washers-250x250.jpg" />
+    <Content Include="Images\mild-steel-250x250.jpg" />
+    <Content Include="Images\mild-steel-plate-250x250.jpg" />
+    <Content Include="Images\plain-washers-250x250.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
@@ -226,7 +236,7 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Product\Product.cshtml" />
+    <Content Include="Views\Products\Products.cshtml" />
     <Content Include="Views\Home\Quality.cshtml" />
     <Content Include="Views\Home\Client.cshtml" />
     <Content Include="Views\Home\Infrastructure.cshtml" />
